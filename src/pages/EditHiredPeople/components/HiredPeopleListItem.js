@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import Sort from "../../../components/Sort";
 
 function HiredPeopleListItem(props) {
   const navigate = useNavigate();
   const { hiredPerson, hiredPeople, setHiredPeople, people, setPeople } = props;
 
   const removeFromHired = (removeId) => {
-    console.log("Remove", removeId);
+    hiredPerson.wage = 0;
 
     const updatedHiredPeople = hiredPeople.filter((peopleItem) => {
       if (peopleItem.id.value !== removeId) {
@@ -14,7 +15,8 @@ function HiredPeopleListItem(props) {
     });
 
     setHiredPeople(updatedHiredPeople);
-    setPeople([...people, hiredPerson]);
+    const sortedPeople = Sort([...people, hiredPerson], "name", "first");
+    setPeople(sortedPeople);
     navigate("/");
   };
   return (

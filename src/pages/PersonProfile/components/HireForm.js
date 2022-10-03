@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Sort from "../../../components/Sort";
 
 function HireForm(props) {
   const navigate = useNavigate();
@@ -22,7 +23,9 @@ function HireForm(props) {
     });
 
     setPeople(updatedPeople);
-    setHiredPeople([...hiredPeople, person]);
+
+    const sortedHiredPeople = Sort([...hiredPeople, person], "name", "first");
+    setHiredPeople(sortedHiredPeople);
     navigate("/");
   }
 

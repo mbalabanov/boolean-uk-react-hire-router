@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router";
 import { Link } from "react-router-dom";
+import Sort from "./components/Sort";
 
 import Dashboard from "./pages/Dashboard";
 import PersonProfile from "./pages/PersonProfile";
@@ -21,7 +22,8 @@ export default function App() {
       eachDataItem.wage = 0;
       return eachDataItem;
     });
-    setPeople(dataWithWageField);
+    const sortedPeople = Sort(dataWithWageField, "name", "first");
+    setPeople(sortedPeople);
   };
 
   useEffect(() => {
@@ -34,7 +36,9 @@ export default function App() {
         <h1>Hire Your Team</h1>
         <nav>
           <ul>
-            <Link to="/">Dashboard</Link>
+            <Link to="/" className="viewButton">
+              Dashboard
+            </Link>
           </ul>
         </nav>
       </header>
