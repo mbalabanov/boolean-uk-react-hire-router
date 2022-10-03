@@ -8,3 +8,17 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
+
+.viewButton {
+  text-decoration: none;
+  padding: 0.4em;
+  border: 1px gray solid;
+  background-color: lightgray;
+  border-radius: 0.6em;
+  color: black;
+}
+
+.viewButton:hover {
+  color: white;
+  background-color: black;
+}

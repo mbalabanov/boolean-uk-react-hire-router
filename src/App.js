@@ -17,7 +17,7 @@ export default function App() {
     const response = await fetch(API_URL);
     const data = await response.json();
     const dataWithWageField = data.results.map((eachDataItem) => {
-      eachDataItem.wage = null;
+      eachDataItem.wage = 0;
       return eachDataItem;
     });
     setPeople(dataWithWageField);

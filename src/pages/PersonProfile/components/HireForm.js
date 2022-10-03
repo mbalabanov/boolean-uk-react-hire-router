@@ -5,24 +5,20 @@ function HireForm(props) {
   const navigate = useNavigate();
   const { person, setPerson, hiredPeople, setHiredPeople, people, setPeople } =
     props;
-  const [wageAmount, setWageAmount] = useState(0);
+
+  const [wageAmount, setWageAmount] = useState(person.wage);
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log("wageAmount");
-    console.log(wageAmount);
+
     person.wage = wageAmount;
     setPerson({ ...person });
-    console.log(person.id.value);
 
     const updatedPeople = people.filter((peopleItem) => {
       if (peopleItem.id.value !== person.id.value) {
         return peopleItem;
       }
     });
-
-    console.log("updatedPeople");
-    console.log(updatedPeople);
 
     setPeople(updatedPeople);
     setHiredPeople([...hiredPeople, person]);
