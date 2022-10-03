@@ -45,7 +45,15 @@ export default function App() {
             />
           }
         />
-        <Route path="/view/:id" element={<PersonProfile />} />
+        <Route
+          path="/view/:id"
+          element={
+            <PersonProfile
+              hiredPeople={hiredPeople}
+              setHiredPeople={setHiredPeople}
+            />
+          }
+        />
       </Routes>
     </>
   );
