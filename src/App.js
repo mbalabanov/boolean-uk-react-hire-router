@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import Dashboard from "./pages/Dashboard";
 import PersonProfile from "./pages/PersonProfile";
+import EditHiredPeople from "./pages/EditHiredPeople";
 
 import "./styles.css";
 
@@ -46,6 +47,17 @@ export default function App() {
           path="/view/:id"
           element={
             <PersonProfile
+              hiredPeople={hiredPeople}
+              setHiredPeople={setHiredPeople}
+              people={people}
+              setPeople={setPeople}
+            />
+          }
+        />
+        <Route
+          path="/edit_hired"
+          element={
+            <EditHiredPeople
               hiredPeople={hiredPeople}
               setHiredPeople={setHiredPeople}
               people={people}

@@ -1,4 +1,5 @@
 import PeopleList from "./components/PeopleList";
+import { Link } from "react-router-dom";
 
 function Dashboard(props) {
   const { hiredPeople, people } = props;
@@ -11,6 +12,11 @@ function Dashboard(props) {
       </section>
       <section>
         <h2>Hired People</h2>
+        {hiredPeople.length > 0 && (
+          <Link to="/edit_hired" className="viewButton">
+            Edit
+          </Link>
+        )}
         <PeopleList people={hiredPeople} colName="HiredPeopleCol" />
       </section>
     </main>
