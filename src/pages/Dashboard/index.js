@@ -1,8 +1,7 @@
-import { useState } from "react";
 import PeopleList from "./components/PeopleList";
 
 function Dashboard(props) {
-  const { hiredPeople, setHirePeople, people, setPeople } = props;
+  const { hiredPeople, people } = props;
 
   return (
     <main className="dashboard-layout">

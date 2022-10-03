@@ -16,7 +16,11 @@ export default function App() {
   const getRandomUsers = async () => {
     const response = await fetch(API_URL);
     const data = await response.json();
-    setPeople(data.results);
+    const dataWithWageField = data.results.map((eachDataItem) => {
+      eachDataItem.wage = null;
+      return eachDataItem;
+    });
+    setPeople(dataWithWageField);
   };
 
   useEffect(() => {
@@ -36,14 +40,7 @@ export default function App() {
       <Routes>
         <Route
           path="/"
-          element={
-            <Dashboard
-              hiredPeople={hiredPeople}
-              setHiredPeople={setHiredPeople}
-              people={people}
-              setPeople={setPeople}
-            />
-          }
+          element={<Dashboard hiredPeople={hiredPeople} people={people} />}
         />
         <Route
           path="/view/:id"
@@ -51,6 +48,8 @@ export default function App() {
             <PersonProfile
               hiredPeople={hiredPeople}
               setHiredPeople={setHiredPeople}
+              people={people}
+              setPeople={setPeople}
             />
           }
         />

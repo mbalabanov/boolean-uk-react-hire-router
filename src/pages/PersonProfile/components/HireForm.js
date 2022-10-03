@@ -1,15 +1,32 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function HireForm(props) {
-  const { person, setPerson, hiredPeople, setHiredPeople } = props;
+  const navigate = useNavigate();
+  const { person, setPerson, hiredPeople, setHiredPeople, people, setPeople } =
+    props;
   const [wageAmount, setWageAmount] = useState(0);
 
   function handleSubmit(event) {
     event.preventDefault();
-    setWageAmount(event.target.wage.value);
-    setPerson({ ...person, wage: wageAmount });
-    console.log(person);
+    console.log("wageAmount");
+    console.log(wageAmount);
+    person.wage = wageAmount;
+    setPerson({ ...person });
+    console.log(person.id.value);
+
+    const updatedPeople = people.filter((peopleItem) => {
+      if (peopleItem.id.value !== person.id.value) {
+        return peopleItem;
+      }
+    });
+
+    console.log("updatedPeople");
+    console.log(updatedPeople);
+
+    setPeople(updatedPeople);
     setHiredPeople([...hiredPeople, person]);
+    navigate("/");
   }
 
   return (

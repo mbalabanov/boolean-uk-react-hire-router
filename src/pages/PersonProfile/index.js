@@ -3,14 +3,14 @@ import { useLocation } from "react-router";
 import HireForm from "./components/HireForm";
 
 function PersonProfile(props) {
-  const { hiredPeople, setHiredPeople } = props;
+  const { hiredPeople, setHiredPeople, people, setPeople } = props;
   const [person, setPerson] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
     if (location.state) {
       const { person } = location.state;
-      setPerson({ ...person, wage: 0 });
+      setPerson(person);
     }
   }, [location]);
 
@@ -26,6 +26,8 @@ function PersonProfile(props) {
         setPerson={setPerson}
         hiredPeople={hiredPeople}
         setHiredPeople={setHiredPeople}
+        people={people}
+        setPeople={setPeople}
       />
     </article>
   );
