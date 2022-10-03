@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function HireForm(props) {
   const navigate = useNavigate();
@@ -29,13 +30,19 @@ function HireForm(props) {
     <form onSubmit={handleSubmit}>
       <label htmlFor="wage">Wage Offer</label>
       <input
-        type="text"
+        type="number"
+        min="1"
         id="wage"
         name="wage"
         onChange={(e) => setWageAmount(e.target.value)}
         value={wageAmount}
       />
-      <button type="submit">Hire</button>
+      <button type="submit" className="viewButton">
+        Hire
+      </button>
+      <Link to={"/"} className="cancel">
+        Cancel
+      </Link>
     </form>
   );
 }

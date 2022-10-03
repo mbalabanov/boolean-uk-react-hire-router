@@ -9,16 +9,30 @@
   gap: 1rem;
 }
 
-.viewButton {
+.viewButton,
+.cancel {
   text-decoration: none;
+  font-family: sans-serif;
   padding: 0.4em;
   border: 1px gray solid;
   background-color: lightgray;
   border-radius: 0.6em;
   color: black;
+  font-size: 0.8em;
+  margin-left: 0.4em;
 }
 
 .viewButton:hover {
   color: white;
   background-color: black;
+}
+
+.cancel {
+  border: 1px red solid;
+  background-color: lightpink;
+}
+
+.cancel:hover {
+  background-color: red;
+  color: white;
 }
