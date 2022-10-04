@@ -65,17 +65,6 @@ export default function App() {
             />
           }
         />
-        <Route
-          path="/edit_hired"
-          element={
-            <EditHiredPeople
-              hiredPeople={hiredPeople}
-              setHiredPeople={setHiredPeople}
-              people={people}
-              setPeople={setPeople}
-            />
-          }
-        />
       </Routes>
     </>
   );
