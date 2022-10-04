@@ -4,7 +4,7 @@ function PeopleList(props) {
   const { people, colName } = props;
 
   return (
-    <ul>
+    <div className="TwoColGrid">
       {people.map((person, index) => (
         <PeopleListItem
           key={index}
@@ -13,7 +13,7 @@ function PeopleList(props) {
           colName={colName}
         />
       ))}
-    </ul>
+    </div>
   );
 }
 

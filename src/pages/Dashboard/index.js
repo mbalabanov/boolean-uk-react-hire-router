@@ -1,9 +1,11 @@
 import PeopleList from "./components/PeopleList";
+import HiredPeopleList from "./components/HiredPeopleList";
 import { Link } from "react-router-dom";
 
 function Dashboard(props) {
-  const { hiredPeople, people } = props;
-
+  const { hiredPeople, setHiredPeople, people, setPeople } = props;
+  console.log("Props in Dashboard");
+  console.log(props);
   const numberOfPeople = people.length;
   const numberOfHiredPeople = hiredPeople.length;
 
@@ -25,7 +27,13 @@ function Dashboard(props) {
             Edit
           </Link>
         )}
-        <PeopleList people={hiredPeople} colName="HiredPeopleCol" />
+        <HiredPeopleList
+          hiredPeople={hiredPeople}
+          setHiredPeople={setHiredPeople}
+          people={people}
+          setPeople={setPeople}
+          colName="HiredPeopleCol"
+        />
       </section>
     </main>
   );

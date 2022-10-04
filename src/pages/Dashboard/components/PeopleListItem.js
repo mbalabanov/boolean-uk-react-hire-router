@@ -5,7 +5,7 @@ function PeopleListItem(props) {
 
   return (
     <>
-      <li>
+      <div>
         <h3>
           {person.name.first} {person.name.last}
         </h3>
@@ -15,7 +15,7 @@ function PeopleListItem(props) {
             View
           </Link>
         )}
-      </li>
+      </div>
     </>
   );
 }
