@@ -5,7 +5,7 @@ import Sort from "./components/Sort";
 
 import Dashboard from "./pages/Dashboard";
 import PersonProfile from "./pages/PersonProfile";
-import EditHiredPeople from "./pages/EditHiredPeople";
+
 
 import "./styles.css";
 

@@ -1,8 +1,7 @@
 import HiredPeopleListItem from "./HiredPeopleListItem";
 
 function HiredPeopleList(props) {
-  console.log("props");
-  console.log(props);
+
   const { hiredPeople, setHiredPeople, people, setPeople } = props;
 
   return (

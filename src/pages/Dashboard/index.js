@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 
 function Dashboard(props) {
   const { hiredPeople, setHiredPeople, people, setPeople } = props;
-  console.log("Props in Dashboard");
-  console.log(props);
   const numberOfPeople = people.length;
   const numberOfHiredPeople = hiredPeople.length;
 
@@ -22,11 +20,6 @@ function Dashboard(props) {
           Hired People
           {numberOfHiredPeople > 0 && <span> ({numberOfHiredPeople})</span>}
         </h2>
-        {numberOfHiredPeople > 0 && (
-          <Link to="/edit_hired" className="viewButton">
-            Edit
-          </Link>
-        )}
         <HiredPeopleList
           hiredPeople={hiredPeople}
           setHiredPeople={setHiredPeople}
